@@ -7,7 +7,7 @@ const browsersync = require("browser-sync");
 const dist = "E:/For Work/Programmer/OpenServer/domains/PractiveThree/dist";
 
 gulp.task("copy-html", () => {
-    return gulp.src("./src/index.html")
+    return gulp.src("./src/*.html")
                 .pipe(gulp.dest(dist))
                 .pipe(browsersync.stream());
 });
@@ -53,7 +53,7 @@ gulp.task("copy-assets", () => {
 gulp.task("watch", () => {
     browsersync.init({
       server: {
-        baseDir: "E:/For Work/Programmer/OpenServer/domains/PractiveThree/dist",
+        baseDir: "E:/For Work/Programmer/OpenServer/domains/PractiveThree/dist/",
         serveStaticOptions: {
             extensions: ["html"]
         }
